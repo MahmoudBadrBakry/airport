@@ -1,20 +1,20 @@
 package com.pluralsight.tddjunit5.airport;
 
-public class PremuimFlight extends Flight {
-    public PremuimFlight(String id) {
+public class PremiumFlight extends Flight {
+    public PremiumFlight(String id) {
         super(id);
     }
 
     @Override
     public boolean addPassenger(Passenger passenger) {
         if (passenger.isVip()) {
-            return passengersList.add(passenger);
+            return passengerSet.add(passenger);
         }
         return false;
     }
 
     @Override
     public boolean removePassenger(Passenger passenger) {
-        return passengersList.remove(passenger);
+        return passengerSet.remove(passenger);
     }
 }
