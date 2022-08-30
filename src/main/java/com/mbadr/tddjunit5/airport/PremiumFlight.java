@@ -1,4 +1,4 @@
-package com.pluralsight.tddjunit5.airport;
+package com.mbadr.tddjunit5.airport;
 
 public class PremiumFlight extends Flight {
     public PremiumFlight(String id) {

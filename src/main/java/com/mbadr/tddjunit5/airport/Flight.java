@@ -1,12 +1,14 @@
-package com.pluralsight.tddjunit5.airport;
+package com.mbadr.tddjunit5.airport;
 
 import java.util.*;
 
 public abstract class Flight {
 
 	private String id;
-	protected Set<Passenger> passengerSet = new HashSet<>();
 
+	private long distance;
+
+	protected Set<Passenger> passengerSet = new HashSet<>();
 	public Flight(String id) {
 		this.id = id;
 	}
@@ -22,5 +24,13 @@ public abstract class Flight {
 	public abstract boolean addPassenger(Passenger passenger);
 
 	public abstract boolean removePassenger(Passenger passenger);
+
+	public long getDistance() {
+		return distance;
+	}
+
+	public void setDistance(long distance) {
+		this.distance = distance;
+	}
 
 }
