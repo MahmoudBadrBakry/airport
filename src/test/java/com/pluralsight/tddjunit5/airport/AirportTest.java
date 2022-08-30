@@ -27,9 +27,9 @@ public class AirportTest {
             @DisplayName("try to add or remove the passenger")
             public void economyFlightTestUsualPassenger() {
                 assertAll("verify all conditions",
-                        () -> assertEquals(true, economyFlight.addPassenger(passenger)),
+                        () -> assertTrue(economyFlight.addPassenger(passenger)),
                         () -> assertEquals("ali", economyFlight.getPassengersList().get(0).getName()),
-                        () -> assertEquals(true, economyFlight.removePassenger(passenger)),
+                        () -> assertTrue(economyFlight.removePassenger(passenger)),
                         () -> assertEquals(0, economyFlight.getPassengersList().size()),
                         () -> assertEquals("1", economyFlight.getId())
                 );
@@ -41,13 +41,13 @@ public class AirportTest {
         class VipPassenger {
             @Test
             @DisplayName("try to add or remove the passenger")
-            public void economyFlightTestUsualPassenger() {
+            public void economyFlightTestVipPassenger() {
                 assertAll("verify all conditions",
-                        () -> assertEquals(true, economyFlight.addPassenger(vipPassenger)),
-                        () -> assertEquals(false, economyFlight.removePassenger(vipPassenger)),
+                        () -> assertTrue(economyFlight.addPassenger(vipPassenger)),
+                        () -> assertFalse(economyFlight.removePassenger(vipPassenger)),
                         () -> assertEquals(1, economyFlight.getPassengersList().size()),
                         () -> assertEquals("1", economyFlight.getId()),
-                        () -> assertEquals(true, vipPassenger.getName().equals("Mahmoud Badr"))
+                        () -> assertEquals("Mahmoud Badr", vipPassenger.getName())
                 );
             }
 
@@ -75,8 +75,8 @@ public class AirportTest {
             @DisplayName("try to add or remove the passenger")
             public void businessFlightTestUsualPassenger() {
                 assertAll("verify all conditions",
-                        () -> assertEquals(false, businessFlight.addPassenger(passenger)),
-                        () -> assertEquals(false, businessFlight.removePassenger(passenger)),
+                        () -> assertFalse(businessFlight.addPassenger(passenger)),
+                        () -> assertFalse(businessFlight.removePassenger(passenger)),
                         () -> assertEquals(0, businessFlight.getPassengersList().size()),
                         () -> assertEquals("1", businessFlight.getId())
                 );
@@ -88,13 +88,13 @@ public class AirportTest {
         class VipPassenger {
             @Test
             @DisplayName("try to add or remove the passenger")
-            public void businessFlightTestUsualPassenger() {
+            public void businessFlightTestVipPassenger() {
                 assertAll("verify all conditions",
-                        () -> assertEquals(true, businessFlight.addPassenger(vipPassenger)),
-                        () -> assertEquals(false, businessFlight.removePassenger(vipPassenger)),
+                        () -> assertTrue(businessFlight.addPassenger(vipPassenger)),
+                        () -> assertFalse(businessFlight.removePassenger(vipPassenger)),
                         () -> assertEquals(1, businessFlight.getPassengersList().size()),
                         () -> assertEquals("1", businessFlight.getId()),
-                        () -> assertEquals(true, vipPassenger.getName().equals("Mahmoud Badr"))
+                        () -> assertEquals("Mahmoud Badr", vipPassenger.getName())
                 );
             }
 
